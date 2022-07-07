@@ -1,0 +1,163 @@
+<!-- https://www.w3schools.com/howto/howto_js_scroll_to_top.asp -->
+
+<style>
+    #myBtn {
+        /* display: none; */
+        /* Hidden by default */
+        /* position: fixed; */
+        /* Fixed/sticky position */
+        /* bottom: 20px; */
+        /* Place the button at the bottom of the page */
+        /* right: 30px; */
+        /* Place the button 30px from the right */
+        /* z-index: 99; */
+        /* Make sure it does not overlap */
+        border: none;
+        /* Remove borders */
+        outline: none;
+        /* Remove outline */
+        background-color: red;
+        /* Set a background color */
+        color: white;
+        /* Text color */
+        cursor: pointer;
+        /* Add a mouse pointer on hover */
+        /* padding: 15px; */
+        /* Some padding */
+        border-radius: 50%;
+        /* Rounded corners */
+        /* font-size: 18px; */
+        /* Increase font size */
+    }
+
+    #myBtn:hover {
+        background-color: #555;
+        /* Add a dark-grey background on hover */
+    }
+
+    /* 浮動區位置定義 */
+    #corner_icon_bar_vertical {
+        /* display: none; */
+        /* Hidden by default */
+        position: fixed;
+        /* Fixed/sticky position */
+        bottom: 20px;
+        /* Place the button at the bottom of the page */
+        right: 5px;
+        /* Place the button 30px from the right */
+        z-index: 99;
+        /* Make sure it does not overlap */
+        border: none;
+        /* border: 1px solid red; */
+        /* Remove borders */
+        outline: none;
+        /* Remove outline */
+        /* background-color: red; */
+        /* Set a background color */
+        /* color: white; */
+        /* Text color */
+        /* cursor: pointer; */
+        /* Add a mouse pointer on hover */
+        /* padding: 15px; */
+        /* Some padding */
+        /* border-radius: 10px; */
+        /* Rounded corners */
+        /* font-size: 18px; */
+        /* Increase font size */
+    }
+
+    /* 浮動按鈕效果 */
+    .btn-floating {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        padding: 0;
+        /* position: relative; */
+        text-transform: uppercase;
+        vertical-align: bottom;
+        border: 0;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 10%);
+        font-weight: 500;
+        font-size: .75rem;
+        line-height: 1.5;
+    }
+
+    /* 浮動按鈕按下效果 */
+    .btn-floating:focus {
+        border: 0;
+        box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 10%);
+    }
+
+    /* 圖標限高 */
+    .iconsize-24 {
+        height: 24px;
+        /* width: */
+    }
+</style>
+
+<body>
+    <div id="corner_icon_bar_vertical" class="d-flex flex-column">
+        <button id="btnline" class="btn btn-success btn-floating m-1 d-none" title="分享至LINE">
+            <img src="https://img.icons8.com/fluency-systems-regular/48/undefined/line-me.png"
+                class=" iconsize-24 invert_color" />
+        </button>
+        <button id="btnfb" class="btn btn-primary btn-floating m-1 d-none" title="分享至Facebook">
+            <img src="https://img.icons8.com/material-outlined/24/undefined/facebook-new.png"
+                class=" iconsize-24  invert_color" />
+        </button>
+        <button id="btntop" class="d-none btn btn-light btn-floating m-1" title="返回頂部">
+            <img src="https://img.icons8.com/external-tanah-basah-glyph-tanah-basah/48/undefined/external-Up-arrows-tanah-basah-glyph-tanah-basah.png"
+                class=" iconsize-24" />
+        </button>
+    </div>
+
+
+    <script>
+        // alert('ddd')
+        //Get the button:
+        mydiv = $('#corner_icon_bar_vertical')
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                // mydiv.style.display = "block";
+                // mydiv.addClass("d-flex")
+                //     .removeClass("d-none");
+                $('#btntop').removeClass('d-none ')
+            } else {
+                // mydiv.style.display = "none";
+                // mydiv.removeClass("d-flex")
+                //     .addClass("d-none");
+                $('#btntop').addClass('d-none ')
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        $('#btntop').click(function () {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        });
+
+        $('#btnfb').click(function () {
+            // alert(window.location.href);
+            javascript: window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURI(location.href), "_blank", "toolbar=0,status=0")
+        });
+
+        $('#btnline').click(function () {
+
+            javascript: window.open('https://lineit.line.me/share/ui?url='.concat(encodeURIComponent(location.href)), "_blank", "toolbar=0,status=0");
+        });
+
+    </script>
+
+    <script>
+        // 客製不同頁面的按鈕顯示
+        if (window.location.pathname == '/item-detail.html') {
+            $('#btnline').removeClass('d-none ')
+            $('#btnfb').removeClass('d-none ')
+        }
+    </script>
+
+</body>

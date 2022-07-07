@@ -1,0 +1,128 @@
+<!-- 最上面的，浮動的logo網站列 -->
+
+<style>
+    /* 浮動logobar；從露天賣家中心借用 */
+    .sc-header {
+        /* display: flex;
+            align-items: center;
+            justify-content: space-between; */
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 2050;
+        /* height: 64px; */
+        /* padding-right: 24px;
+            padding-left: 24px; */
+        /* background-image: linear-gradient(to right, #ff8a07, #ffa23a); */
+        max-height: 60px;
+        /* flex-flow: row nowrap; */
+        padding: 0;
+    }
+
+    /* 圖標限高 */
+    #navbtndiv img {
+        height: 24px;
+        /* width: */
+    }
+
+    #navbtndiv a {
+        width: 40px;
+        height: 38px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .navbtnIndicator {
+        margin-left: 10px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: hsl(212, 100%, 32%);
+        color: white;
+        text-align: center;
+        line-height: 10px;
+    }
+</style>
+
+<body>
+    <!-- 網站列 -->
+    <nav class="sc-header navbar navbar-expand-lg navbar-light bg-OUR">
+        <div class="debug藍 d-flex align-items-center btn-OUR" style="height: 60px;">
+            <img class="navbar-brand debug紅 p-0 m-0"
+                src="https://img.icons8.com/material-outlined/48/000000/successful-delivery.png" style="height: 48px" />
+            <a class="navbar-brand  debug綠 py-0" href="#" style="font-size: 28px;">樂酷樂庫!</a>
+        </div>
+
+        <!-- <ul class="navbar-nav mr-auto debug紅">
+            <li class="nav-item btn-OUR active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul> -->
+
+
+        <div class="collapse navbar-collapse debug綠" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto debug紅  bg-OUR">
+                <li class="nav-item btn-OUR btn-transparent active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item btn-OUR btn-transparent">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item btn-OUR btn-transparent dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+                <li class="nav-item btn-OUR btn-transparent">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <div class="  bg-OUR py-sm-2">
+                <form class="form-inline debug紅">
+                    <input style="width: auto;" class="form-control mr-sm-2" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                        <img src="https://img.icons8.com/material-outlined/24/000000/search--v1.png" />
+                    </button>
+                </form>
+            </div>
+
+        </div>
+        <div style="width: 140px;">
+            <!-- 佔位用，給下面浮動按鈕留空 -->
+        </div>
+
+        <div id="navbtndiv" style="position: fixed; top: 10px; right: 8px;">
+            <a href="" class="btn btn-OUR" id="navbtnUser">
+                <img src="https://img.icons8.com/material-outlined/24/000000/user--v1.png" />
+            </a>
+            <a href="" class="btn btn-OUR" id="navbtnCart">
+                <img src="https://img.icons8.com/material-outlined/24/000000/shopping-cart--v1.png" />
+            </a>
+            <a href="" class="btn btn-OUR" id="navbtnMessage">
+                <img src="https://img.icons8.com/material-outlined/24/000000/filled-chat.png" />
+            </a>
+            <button class="navbar-toggler  btn-OUR" type="button" data-toggle="collapse"
+                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbtnIndicator" style="position: fixed; top: 8px; right: 110px;">
+            1
+        </div>
+
+    </nav>
+
+    <script>
+
+    </script>
+</body>
